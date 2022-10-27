@@ -6,16 +6,21 @@ function App() {
   //   getData();
   // }, []);
 
-  // const getData = async () => {
-  //   const response = await fetch(
-  //     `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-  //   );
-  //   const data = await response.json();
-  //   console.log(data);
-  // };
+  const getData = async () => {
+    const response = await fetch(`/oauth/authorize
+  ?client_id=1096816224277958
+  &redirect_uri=https://instadetails.netlify.app/
+  &scope=user_profile,user_media
+  &response_type=code`);
+    const data = await response.json();
+    console.log(data);
+  };
   return (
     <div className="App">
       <h1>Hola amigos!</h1>
+      <button className="btn" onClick={getData}>
+        Add Account
+      </button>
     </div>
   );
 }

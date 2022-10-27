@@ -2,9 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn{
+  background-color: rgb(56, 56, 247);
+  height: 45px;
+  width: 90px;
+  border-radius: 5px;
+  color: white;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -8,7 +8,7 @@ function App() {
 
   const getData = async () => {
     const response = await fetch(
-      `/oauth/authorize?client_id=1096816224277958&redirect_uri=https://instadetails.netlify.app/&scope=user_profile,user_media&response_type=code`
+      `https://api.instagram.com/oauth/authorize?client_id=1096816224277958&redirect_uri=https://instadetails.netlify.app/&scope=user_profile,user_media&response_type=code`
     );
     const data = await response.json();
     console.log(data);

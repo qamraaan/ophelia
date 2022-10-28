@@ -18,7 +18,7 @@ const Home = () => {
         headers: {
           "Content-type": "application/json",
         },
-        body: obj,
+        body: JSON.stringify(obj),
       });
       console.log("REspoonce", response);
     } catch (err) {

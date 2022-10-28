@@ -11,6 +11,7 @@ const Home = () => {
     let obj = {
       code: searchParams.get("code"),
     };
+    console.log("OJbje", obj);
     try {
       const response = await fetch(`https://bf6e-137-59-1-12.in.ngrok.io`, {
         method: "POST",

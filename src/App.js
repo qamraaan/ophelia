@@ -3,6 +3,7 @@ import "./App.css";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
+import UserMedia from "./UserMedia";
 function App() {
   // }, []);
 
@@ -18,6 +19,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/user" element={<UserMedia />} />
         </Routes>
       </div>
     </Router>

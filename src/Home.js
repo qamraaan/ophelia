@@ -27,7 +27,7 @@ const Home = () => {
         const data = await response.json();
         const userDetails = await fetch(
           // `https://graph.instagram.com/17841456185935341?fields=id,username&access_token=${data.access_token}`
-          `https://graph.instagram.com/me/media?fields=id,username,caption&access_token=${data.access_token}`
+          `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`
         );
         const user = await userDetails.json();
         setUserInfo(user);

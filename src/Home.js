@@ -5,8 +5,22 @@ const Home = () => {
   let url = `https://api.instagram.com/oauth/authorize?client_id=1096816224277958&redirect_uri=https://instadetails.netlify.app/&scope=user_profile,user_media&response_type=code`;
   useEffect(() => {
     console.log("Search Params", searchParams.get("code"));
+    getAccessToken();
   }, [searchParams]);
-
+  const getAccessToken = async () => {
+    let obj = {
+      code: searchParams.get("code"),
+    };
+    try {
+      const response = await fetch(`https://bf6e-137-59-1-12.in.ngrok.io`, {
+        method: "POST",
+        body: obj,
+      });
+      console.log("REspoonce", response);
+    } catch (err) {
+      return err;
+    }
+  };
   return (
     <>
       <div>

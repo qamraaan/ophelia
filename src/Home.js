@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import UserMedia from "./UserMedia";
 const Home = () => {
   const navigate = useNavigate();
+  // const [userInfo, setUserInfo] = useState({});
   const [searchParams] = useSearchParams();
   const [userInfo, setUserInfo] = useState({});
 
@@ -32,7 +33,6 @@ const Home = () => {
         setUserInfo(user);
         // console.log("User media", user);
         // navigate()
-        <UserMedia user={user} />;
       } catch (err) {
         return err;
       }
@@ -46,7 +46,7 @@ const Home = () => {
         {" "}
         <h1>Hola amigos!</h1>
         <a href={url}>Link Instagram Account </a>
-        {/* <UserMedia user /> */}
+        <UserMedia user={userInfo} />;{/* <UserMedia user /> */}
         {/* <button className="btn" onClick={getData}>
         Add Account
       </button> */}

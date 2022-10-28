@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 const UserMedia = (props) => {
+  console.log(props.user);
   useEffect(() => {
     console.log("UserInfo", props);
   }, []);
 
   return (
     <div>
-      {props.user.data.map((userInfo) => {
+      {/* {props.user.data.map((userInfo) => {
         return (
           <>
             {" "}
@@ -17,7 +18,8 @@ const UserMedia = (props) => {
             <h5>{userInfo?.caption}</h5>
           </>
         );
-      })}
+      })} */}
+      {/* {props.user} */}
     </div>
   );
 };

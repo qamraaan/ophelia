@@ -9,11 +9,11 @@ const UserMedia = (props) => {
     console.log("props.user in UseEffect", props?.user);
     console.log("props.user.data in UseEffect", props?.user?.data);
     console.log("props.user.data.id in UseEffect", props?.user?.data?.id);
-  }, []);
+  }, [props.user]);
 
   return (
     <div>
-      {/* {props.user.data.map((userInfo) => {
+      {props?.user?.data?.map((userInfo) => {
         return (
           <>
             {" "}
@@ -24,7 +24,7 @@ const UserMedia = (props) => {
             <h5>{userInfo?.caption}</h5>
           </>
         );
-      })} */}
+      })}
       {/* {props.user} */}
     </div>
   );

@@ -14,15 +14,23 @@ const UserMedia = (props) => {
 
   return (
     <div>
+      <div className="heading">
+        <h1>Username: {props?.user?.data?.username}</h1>
+        <h3>UserId: {props?.user?.data?.id}</h3>
+      </div>
+      <br />
+      <br />
       {props?.user?.data?.map((userInfo) => {
         return (
           <div className="container">
-            <h1 className="username">{userInfo?.username}</h1>
-            <h3 className="user-id">{userInfo?.id}</h3>
             {/* <h4>{userInfo?.media_url}</h4>
             <div>{userInfo?.media_type}</div> */}
             {userInfo?.media_type === "IMAGE" ? (
-              <img src={userInfo?.media_url} alt="media url" />
+              <img
+                className="image "
+                src={userInfo?.media_url}
+                alt="media url"
+              />
             ) : (
               <video width="300" height="250" controls>
                 <source src={userInfo?.media_url} type="video/mp4" />

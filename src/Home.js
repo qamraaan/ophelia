@@ -20,11 +20,17 @@ const Home = () => {
         },
         body: JSON.stringify(obj),
       });
-      console.log("REspoonce", await response.json());
+      const data = await response.json();
+      const userDetails = await fetch(
+        `https://graph.instagram.com/17841456185935341?fields=id,username&access_token=${data.access_token}`
+      );
+      const user = await userDetails.json();
+      console.log("User ha aaw", user);
     } catch (err) {
       return err;
     }
   };
+
   return (
     <>
       <div>

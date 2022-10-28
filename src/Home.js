@@ -46,7 +46,8 @@ const Home = () => {
         {" "}
         <h1>Hola amigos!</h1>
         <a href={url}>Link Instagram Account </a>
-        <UserMedia user={userInfo} />;{/* <UserMedia user /> */}
+        <UserMedia user={userInfo} />
+        {/* <UserMedia user /> */}
         {/* <button className="btn" onClick={getData}>
         Add Account
       </button> */}

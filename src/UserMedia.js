@@ -1,8 +1,14 @@
 import React, { useEffect } from "react";
 const UserMedia = (props) => {
-  console.log(props.user);
+  console.log("props", props);
+  console.log("props.user", props?.user);
+  console.log("props.user.data", props?.user?.data);
+  console.log("props.user.data.id", props?.user?.data?.id);
   useEffect(() => {
-    console.log("UserInfo", props);
+    console.log("props in UseEffect", props);
+    console.log("props.user in UseEffect", props?.user);
+    console.log("props.user.data in UseEffect", props?.user?.data);
+    console.log("props.user.data.id in UseEffect", props?.user?.data?.id);
   }, []);
 
   return (

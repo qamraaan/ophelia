@@ -20,7 +20,7 @@ const Home = () => {
         },
         body: JSON.stringify(obj),
       });
-      console.log("REspoonce", response.json);
+      console.log("REspoonce", await response.json());
     } catch (err) {
       return err;
     }

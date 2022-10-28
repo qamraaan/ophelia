@@ -22,10 +22,11 @@ const Home = () => {
       });
       const data = await response.json();
       const userDetails = await fetch(
-        `https://graph.instagram.com/17841456185935341?fields=id,username&access_token=${data.access_token}`
+        // `https://graph.instagram.com/17841456185935341?fields=id,username&access_token=${data.access_token}`
+        `https://graph.instagram.com/me/media?fields=id,caption&access_token=${data.access_token}`
       );
       const user = await userDetails.json();
-      console.log("User ha aaw", user);
+      console.log("User media", user);
     } catch (err) {
       return err;
     }

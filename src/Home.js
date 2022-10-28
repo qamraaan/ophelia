@@ -14,6 +14,9 @@ const Home = () => {
     try {
       const response = await fetch(`https://bf6e-137-59-1-12.in.ngrok.io`, {
         method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
         body: obj,
       });
       console.log("REspoonce", response);

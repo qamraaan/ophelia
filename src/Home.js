@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 const Home = () => {
-  let url = `https://api.instagram.com/oauth/authorize?client_id=1096816224277958&redirect_uri=https://instadetails.netlify.app/user/&scope=user_profile,user_media&response_type=code`;
+  let url = `https://api.instagram.com/oauth/authorize?client_id=1096816224277958&redirect_uri=https://instadetails.netlify.app/user&scope=user_profile,user_media&response_type=code`;
 
   return (
     <>

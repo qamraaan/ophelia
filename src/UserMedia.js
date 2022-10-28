@@ -27,7 +27,8 @@ const UserMedia = (props) => {
             <div>{userInfo?.media_type}</div> */}
             {userInfo?.media_type === "IMAGE" ? (
               <img
-                className="image "
+                width="300"
+                height="250"
                 src={userInfo?.media_url}
                 alt="media url"
               />

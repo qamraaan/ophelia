@@ -57,8 +57,10 @@
   /* background-color: blanchedalmond; */
   border-radius: 20px;
   align-items: flex-start;
-  font-family: Arial, Helvetica, sans-serif
+  /* font-family: Arial, Helvetica, sans-serif; */
   /* color: antiquewhite; */
+  margin-top: 50px;
+  color: brown;
 }
 .container {
   border: 2px solid purple;

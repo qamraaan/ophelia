@@ -49,13 +49,13 @@ const Home = () => {
         }
 
         // console.log("User media", user);
-        // navigate()
+        navigate("/user", { state: { user } });
       } catch (err) {
         return err;
       }
     };
     getAccessToken();
-  }, [searchParams]);
+  }, [searchParams, navigate]);
 
   return (
     <>
@@ -74,7 +74,7 @@ const Home = () => {
           </a>
         </div>
       </div>
-      {showUser && <UserMedia user={userInfo} />}
+      {/* {showUser && <UserMedia user={userInfo} />} */}
     </>
   );
 };

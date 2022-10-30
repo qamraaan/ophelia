@@ -17,7 +17,8 @@ const UserMedia = (props) => {
           <div className="container">
             {/* <h4>{userInfo?.media_url}</h4>
             <div>{userInfo?.media_type}</div> */}
-            {userInfo?.media_type === "IMAGE" || "CAROUSEL_ALBUM" ? (
+            {userInfo?.media_type === "IMAGE" ||
+            userInfo?.media_type === "CAROUSEL_ALBUM" ? (
               <img
                 width="300"
                 height="250"
@@ -35,7 +36,14 @@ const UserMedia = (props) => {
           </div>
         );
       })}
-      <button className="btn">For more information</button>
+      <a
+        className="insta-link"
+        href={
+          "https://rapidapi.com/blog/how-to-navigate-and-connect-to-instagrams-api/#endpoints_with_scopes"
+        }
+      >
+        For More information{" "}
+      </a>
     </div>
   );
 };

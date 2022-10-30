@@ -17,7 +17,7 @@ const UserMedia = (props) => {
           <div className="container">
             {/* <h4>{userInfo?.media_url}</h4>
             <div>{userInfo?.media_type}</div> */}
-            {userInfo?.media_type === "IMAGE" ? (
+            {userInfo?.media_type === "IMAGE" || "CAROUSEL_ALBUM" ? (
               <img
                 width="300"
                 height="250"

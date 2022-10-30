@@ -55,7 +55,7 @@ const Home = () => {
           </a>
         </div>
       </div>
-      {/* <UserMedia user={userInfo} /> */}
+      <UserMedia user={userInfo} />
     </>
   );
 };

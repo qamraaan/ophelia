@@ -10,19 +10,23 @@ const Home = () => {
 
   let url = `https://api.instagram.com/oauth/authorize?client_id=1096816224277958&redirect_uri=https://instadetails.netlify.app/&scope=user_profile,user_media&response_type=code`;
   useEffect(() => {
-    console.log("Search Params", searchParams.get("code"));
+    // console.log("Search Params", searchParams.get("code"));
+
     const getAccessToken = async () => {
       let obj = {
         code: searchParams.get("code"),
       };
       try {
-        const response = await fetch(`https://bf6e-137-59-1-12.in.ngrok.io`, {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(obj),
-        });
+        const response = await fetch(
+          `https://0452-117-214-240-194.in.ngrok.io`,
+          {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(obj),
+          }
+        );
         const data = await response.json();
         const userDetails = await fetch(
           `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`

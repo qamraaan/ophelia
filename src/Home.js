@@ -49,7 +49,7 @@ const Home = () => {
         }
 
         // console.log("User media", user);
-        navigate("/user", { state: { user } });
+        navigate("/user", { state: { userInfo } });
       } catch (err) {
         return err;
       }

@@ -50,29 +50,39 @@
 .heading{
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 60%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   margin: auto;
   background-color: blanchedalmond;
   border-radius: 20px;
   align-items: flex-start;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Courier New', Courier, monospace;
+  color: antiquewhite;
 }
 .container {
-  display: block;
-  width: 50%;
-  height: 350px;
-  border: solid 2px purple;
+  border: 2px solid purple;
   border-radius: 10px;
+  display: block;
+  margin: 10px auto auto;
   padding: 20px;
+  width: 40%;
+  height: auto;
+}
+.media {
+  width: 80%;
+  height: 350px;
   margin: auto;
   margin-top: auto;
   margin-top: 10px;
-}
-.media {
-  padding: 20px;
-  margin: 10px;
+  border: 1px solid purple;
+  border-radius: 12px;
 }
 .caption {
-  font-size: medium;
-  text-align: center;
+  font-size: small;
+  text-align: justify;
+  color: purple;
+  display: block;
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
 }

@@ -20,9 +20,10 @@ const UserMedia = (props) => {
                 height="250"
                 src={userInfo?.media_url}
                 alt="media url"
+                className="media"
               />
             ) : (
-              <video width="300" height="250" controls>
+              <video className="media" width="300" height="250" controls>
                 <source src={userInfo?.media_url} type="video/mp4" />
               </video>
             )}

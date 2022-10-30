@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [userInfo, setUserInfo] = useState({});
-
+  const [showUser, setShowUser] = useState(false);
   let url = `https://api.instagram.com/oauth/authorize?client_id=1096816224277958&redirect_uri=https://instadetails.netlify.app/&scope=user_profile,user_media&response_type=code`;
   useEffect(() => {
     // console.log("Search Params", searchParams.get("code"));
@@ -17,37 +17,37 @@ const Home = () => {
         code: searchParams.get("code"),
       };
       try {
-        // const response = await fetch(
-        //   `https://0452-117-214-240-194.in.ngrok.io`,
-        //   {
-        //     method: "POST",
-        //     headers: {
-        //       "Content-type": "application/json",
-        //     },
-        //     body: JSON.stringify(obj),
-        //   }
-        // );
-        const form = new FormData();
-        form.append("client_id", "1096816224277958");
-        form.append("client_secret", "f40b0f86184e5359a6b3021c5d4ee0aa");
-        form.append("grant_type", "authorization_code");
-        form.append("redirect_uri", "https://instadetails.netlify.app/");
-        form.append("code", obj.code);
-
         const response = await fetch(
-          "https://api.instagram.com/oauth/access_token",
+          `https://0452-117-214-240-194.in.ngrok.io`,
           {
             method: "POST",
-            body: form,
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify(obj),
           }
         );
+        // const form = new FormData();
+        // form.append("client_id", "1096816224277958");
+        // form.append("client_secret", "f40b0f86184e5359a6b3021c5d4ee0aa");
+        // form.append("grant_type", "authorization_code");
+        // form.append("redirect_uri", "https://instadetails.netlify.app/");
+        // form.append("code", obj.code);
+
+        // fetch("https://api.instagram.com/oauth/access_token", {
+        //   method: "POST",
+        //   body: form,
+        // });
         const data = await response.json();
-        console.log("Dataaaa", data);
         const userDetails = await fetch(
           `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`
         );
         const user = await userDetails.json();
-        setUserInfo(user);
+        if (user) {
+          setShowUser(true);
+          setUserInfo(user);
+        }
+
         // console.log("User media", user);
         // navigate()
       } catch (err) {
@@ -74,7 +74,7 @@ const Home = () => {
           </a>
         </div>
       </div>
-      <UserMedia user={userInfo} />
+      {showUser && <UserMedia user={userInfo} />}
     </>
   );
 };

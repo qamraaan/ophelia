@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import "./App.css";
 const UserMedia = (props) => {
+  useEffect(() => {
+    console.log("MEdia thype", props);
+  }, []);
   return (
     <div>
       <div className="heading">
-        <h3>Username: {props?.user?.data?.username}</h3>
-        <h3>UserId: {props?.user?.data?.id}</h3>
+        <h3>Username: {props?.user?.data[0]?.username}</h3>
+        <h3>UserId: {props?.user?.data[0]?.id}</h3>
       </div>
       <br />
       <br />

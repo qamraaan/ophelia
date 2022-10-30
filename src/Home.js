@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import UserMedia from "./UserMedia";
+import "./App.css";
 const Home = () => {
   const navigate = useNavigate();
-  // const [userInfo, setUserInfo] = useState({});
   const [searchParams] = useSearchParams();
   const [userInfo, setUserInfo] = useState({});
 
@@ -15,7 +15,6 @@ const Home = () => {
       let obj = {
         code: searchParams.get("code"),
       };
-      // console.log("OJbje", obj);
       try {
         const response = await fetch(`https://bf6e-137-59-1-12.in.ngrok.io`, {
           method: "POST",
@@ -26,7 +25,6 @@ const Home = () => {
         });
         const data = await response.json();
         const userDetails = await fetch(
-          // `https://graph.instagram.com/17841456185935341?fields=id,username&access_token=${data.access_token}`
           `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`
         );
         const user = await userDetails.json();
@@ -42,16 +40,22 @@ const Home = () => {
 
   return (
     <>
-      <div>
+      <div className="home">
         {" "}
-        <h1>Hola amigos!</h1>
-        <a href={url}>Link Instagram Account </a>
-        <UserMedia user={userInfo} />
-        {/* <UserMedia user /> */}
-        {/* <button className="btn" onClick={getData}>
-        Add Account
-      </button> */}
+        {/* <div>To add your accounts, click below:</div> */}
+        <div className="links">
+          <a className="insta-link" href={url}>
+            Add Instagram Account{" "}
+          </a>
+          <a className="twitter-link" href={url}>
+            Add Twitter Account{" "}
+          </a>
+          <a className="fb-link" href={url}>
+            Add Facebook Account{" "}
+          </a>
+        </div>
       </div>
+      {/* <UserMedia user={userInfo} /> */}
     </>
   );
 };

@@ -50,14 +50,15 @@
 .heading{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   width: 60%;
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  /* background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); */
   margin: auto;
-  background-color: blanchedalmond;
+  /* background-color: blanchedalmond; */
   border-radius: 20px;
   align-items: flex-start;
-  font-family:'Courier New', Courier, monospace;
-  color: antiquewhite;
+  font-family: Arial, Helvetica, sans-serif
+  /* color: antiquewhite; */
 }
 .container {
   border: 2px solid purple;
@@ -85,4 +86,9 @@
   width: 80%;
   margin: auto;
   padding-top: 20px;
+}
+.btn{
+  height: 40px;
+  width: 100px;
+  background-color: purple;
 }

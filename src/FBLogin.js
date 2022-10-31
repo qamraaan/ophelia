@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
 const FBLogin = () => {
   // const FB = window.FB;
-  useEffect(() => {
-    window.fbAsyncInit = function () {
-      window.FB.init({
-        appId: "453569276891781",
-        cookie: true, // Enable cookies to allow the server to access the session.
-        xfbml: true, // Parse social plugins on this webpage.
-        version: "v15.0", // Use this Graph API version for this call.
-      });
+  //   useEffect(() => {
+  window.fbAsyncInit = function () {
+    window.FB.init({
+      appId: "453569276891781",
+      cookie: true, // Enable cookies to allow the server to access the session.
+      xfbml: true, // Parse social plugins on this webpage.
+      version: "v15.0", // Use this Graph API version for this call.
+    });
 
-      window.FB.getLoginStatus(function (response) {
-        // Called after the JS SDK has been initialized.
-        statusChangeCallback(response); // Returns the login status.
-      });
-    };
-  }, []);
+    window.FB.getLoginStatus(function (response) {
+      // Called after the JS SDK has been initialized.
+      statusChangeCallback(response); // Returns the login status.
+    });
+  };
+  //   }, []);
 
   function statusChangeCallback(response) {
     // Called with the results from FB.getLoginStatus().
@@ -55,9 +55,7 @@ const FBLogin = () => {
     <>
       <fb:login-button
         scope="public_profile,email"
-        onlogin={() => {
-          checkLoginState();
-        }}
+        onlogin={checkLoginState()}
       ></fb:login-button>
 
       <div id="status"></div>

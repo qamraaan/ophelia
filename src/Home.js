@@ -38,7 +38,7 @@ const Home = () => {
         const data = await response.json();
         console.log("DAtaaaa", data);
         const userDetails = await fetch(
-          `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`
+          `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url,followers_count&access_token=${data.access_token}`
         );
         const user = await userDetails.json();
         console.log("Hello User", user);

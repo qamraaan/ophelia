@@ -53,7 +53,9 @@ const FBLogin = () => {
 
   return (
     <>
-      <a onClick={checkLoginState()}>Link to FB</a>
+      <a href="#" onClick={checkLoginState()}>
+        Link to FB
+      </a>
       {/* <fb:login-button
         scope="public_profile,email"
         onlogin={checkLoginState()}

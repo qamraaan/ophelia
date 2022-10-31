@@ -40,7 +40,7 @@ const Home = () => {
         const userDetails = await fetch(
           // `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`
           // `https://graph.facebook.com/v15.0/${data.user_id}?fields=biography&access_token=${data.access_token}`
-          `https://graph.facebook.com/v3.2/${data.user_id}/insights?metric=impressions%2Cengagement%2Creach&access_token=${data.access_token}`
+          `https://graph.facebook.com/v3.2/${data.user_id}/insights?metric=impressions,engagement,reach&access_token=${data.access_token}`
         );
         const user = await userDetails.json();
         console.log("Hello User", user);

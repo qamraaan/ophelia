@@ -17,16 +17,13 @@ const Home = () => {
         code: searchParams.get("code"),
       };
       try {
-        const response = await fetch(
-          `https://0452-117-214-240-194.in.ngrok.io`,
-          {
-            method: "POST",
-            headers: {
-              "Content-type": "application/json",
-            },
-            body: JSON.stringify(obj),
-          }
-        );
+        const response = await fetch(`https://578f-137-59-1-12.in.ngrok.io`, {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(obj),
+        });
         // const form = new FormData();
         // form.append("client_id", "1096816224277958");
         // form.append("client_secret", "f40b0f86184e5359a6b3021c5d4ee0aa");

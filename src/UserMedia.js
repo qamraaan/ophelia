@@ -38,6 +38,7 @@ const UserMedia = (props) => {
       })}
       <a
         className="insta-link"
+        target="_blank"
         href={
           "https://rapidapi.com/blog/how-to-navigate-and-connect-to-instagrams-api/#endpoints_with_scopes"
         }

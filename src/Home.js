@@ -52,7 +52,7 @@ const Home = () => {
       }
     };
     getAccessToken();
-  }, [searchParams, navigate]);
+  }, [searchParams]);
 
   return (
     <>

@@ -15,6 +15,17 @@ const FBLogin = () => {
         statusChangeCallback(response); // Returns the login status.
       });
     };
+
+    // Load the SDK asynchronously
+    (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    })(document, "script", "facebook-jssdk");
   }, []);
 
   function statusChangeCallback(response) {
@@ -51,9 +62,13 @@ const FBLogin = () => {
     });
   }
 
+  function handleClick() {
+    window.FB.login(checkLoginState());
+  }
+
   return (
     <>
-      <button onClick={checkLoginState}>Link to FB</button>
+      <button onClick={handleClick}>Link to FB</button>
       {/* <fb:login-button
         scope="public_profile,email"
         onlogin={checkLoginState()}

@@ -40,10 +40,12 @@ const Home = () => {
           `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`
         );
         const user = await userDetails.json();
+        console.log("Hello User", user);
         if (user) {
           setShowUser(true);
+          setUserInfo(user);
         }
-        setUserInfo(user);
+
         // console.log("User media", user);
         // navigate("/user", { state: { userInfo } });
       } catch (err) {

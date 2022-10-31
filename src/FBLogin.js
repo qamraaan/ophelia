@@ -60,8 +60,9 @@ const FBLogin = () => {
     // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log("Welcome!  Fetching your information.... ");
     window.FB.api(
-      //   `/me/accounts?access_token=${accessToken}`,
-      `/me`,
+      `/me/accounts?access_token=${accessToken}`,
+      //   `response.id/?access_token=${accessToken}`,
+      //   `/me`,
       function (response) {
         console.log(
           "Successful login, give user details: " + JSON.stringify(response)

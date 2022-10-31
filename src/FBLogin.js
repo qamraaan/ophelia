@@ -73,7 +73,7 @@ const FBLogin = () => {
 
   function handleClick() {
     window.FB.login(checkLoginState(), {
-      scope: "email, user_likes, public_profile",
+      scope: "email, user_likes, public_profile, pages_show_list",
     });
   }
 

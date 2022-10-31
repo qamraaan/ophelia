@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import UserMedia from "./UserMedia";
 import "./App.css";
 const Home = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const [userInfo, setUserInfo] = useState({});
   const [showUser, setShowUser] = useState(false);
@@ -42,9 +42,8 @@ const Home = () => {
         const user = await userDetails.json();
         if (user) {
           setShowUser(true);
-          setUserInfo(user);
         }
-
+        setUserInfo(user);
         // console.log("User media", user);
         // navigate("/user", { state: { userInfo } });
       } catch (err) {

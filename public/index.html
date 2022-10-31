@@ -9,6 +9,8 @@
       name="description"
       content="Web site created using create-react-app"
     />
+    <!-- Load the JS SDK asynchronously -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -31,34 +33,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
-          <script>
-            window.fbAsyncInit = function () {
-              FB.init({
-                appId: '453569276891781',
-                cookie: true,
-                xfbml: true,
-                version: '15.0'
-              });
 
-              FB.AppEvents.logPageView();
-
-            };
-
-            (function (d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) { return; }
-              js = d.createElement(s); js.id = id;
-              js.src = "https://connect.facebook.net/en_US/sdk.js";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-            FB.getLoginStatus(function (response) {
-              console.log("REsponse", response);
-              statusChangeCallback(response);
-            });
-          </script>
-              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-              </fb:login-button>
     </div>
     <!--
       This HTML file is a template.

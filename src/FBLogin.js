@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 const FBLogin = () => {
+  const [accessToken, setAccessToken] = useState("");
   // const FB = window.FB;
   useEffect(() => {
     window.fbAsyncInit = function () {
@@ -11,7 +12,9 @@ const FBLogin = () => {
       });
 
       window.FB.getLoginStatus(function (response) {
+        setAccessToken(response.authResponse.accessToken);
         // Called after the JS SDK has been initialized.
+
         statusChangeCallback(response); // Returns the login status.
       });
     };
@@ -31,6 +34,7 @@ const FBLogin = () => {
   function statusChangeCallback(response) {
     // Called with the results from FB.getLoginStatus().
     console.log("statusChangeCallback");
+
     console.log(response); // The current login status of the person.
     if (response.status === "connected") {
       // Logged into your webpage and Facebook.
@@ -55,13 +59,16 @@ const FBLogin = () => {
   function testAPI() {
     // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
     console.log("Welcome!  Fetching your information.... ");
-    window.FB.api("/me", function (response) {
-      console.log(
-        "Successful login, give user details: " + JSON.stringify(response)
-      );
-      document.getElementById("status").innerHTML =
-        "Thanks for logging in, " + response.name + "!";
-    });
+    window.FB.api(
+      `/me/accounts?access_token=${accessToken}`,
+      function (response) {
+        console.log(
+          "Successful login, give user details: " + JSON.stringify(response)
+        );
+        document.getElementById("status").innerHTML =
+          "Thanks for logging in, " + response.name + "!";
+      }
+    );
   }
 
   function handleClick() {

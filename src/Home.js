@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import UserMedia from "./UserMedia";
 import "./App.css";
+import FBLogin from "./FBLogin";
 const Home = () => {
   // const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -59,11 +60,12 @@ const Home = () => {
   }, [searchParams]);
 
   return (
-    <>
-      <div className="home">
-        {" "}
-        {/* <div>To add your accounts, click below:</div> */}
-        <div className="links">
+    <div>
+      <FBLogin />
+      {/* <div className="home"> */}
+
+      {/* <div>To add your accounts, click below:</div> */}
+      {/* <div className="links">
           <a className="insta-link" href={url}>
             Add Instagram Account{" "}
           </a>
@@ -74,9 +76,9 @@ const Home = () => {
             Add Facebook Account{" "}
           </a>
         </div>
-      </div>
-      {showUser && <UserMedia user={userInfo} />}
-    </>
+      </div> */}
+      {/* {showUser && <UserMedia user={userInfo} />} */}
+    </div>
   );
 };
 export default Home;

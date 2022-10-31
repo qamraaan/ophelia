@@ -36,6 +36,7 @@ const Home = () => {
         //   body: form,
         // });
         const data = await response.json();
+        console.log("DAtaaaa", data);
         const userDetails = await fetch(
           `https://graph.instagram.com/me/media?fields=id,username,caption,media_type,media_url&access_token=${data.access_token}`
         );
